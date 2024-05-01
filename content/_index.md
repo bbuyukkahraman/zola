@@ -19,7 +19,7 @@ head_includes = """
 
 # Design
 
-Welcome to the [Academic Workshop](https://github.com/aterenin/academic-worksohp) Zola theme!
+Welcome to the [Academic Workshop](https://github.com/aterenin/academic-workshop) Zola theme!
 This theme is designed for hosting a scientific workshop or seminar series website.
 
 # Features

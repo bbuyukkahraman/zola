@@ -17,7 +17,7 @@
             {% if lines is not iterable %}
                 {% set lines = [text[idx]] %}
             {% endif %}
-            <img class="rounded-circle mb-3" {{ image::resize(url = images[idx] | default(value = false), name = lines[0], directory = image_dir | default(value = false)) }}>
+            <img class="rounded-circle mb-3" alt="lines[0]" {{ image::resize(url = images[idx] | default(value = false), name = lines[0], directory = image_dir | default(value = false)) }}>
             {% for line in lines %}
                 {% if loop.first %}
                     <h2 class="h4 my-1">{{ line }}</h2>

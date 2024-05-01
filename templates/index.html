@@ -20,7 +20,7 @@
 {% block header %}
 <header class="bg-header">
     <div class="container d-flex justify-center">
-        <header class="header d-flex flex-column items-center text-center px-3 py-4">
+        <div class="header d-flex flex-column items-center text-center px-3 py-4">
             <h1>{% if config.extra.tagline %}<span class="tagline h3">{{ config.extra.tagline }}</span> {% endif %}{{ config.extra.title }}</h1>
 
             {% if config.extra.subtitle %}
@@ -32,7 +32,7 @@
                     <a class="btn mx-1" href="{{ button.url | safe }}">{{ button.name }}</a>
                 {% endfor %}
             </div>
-        </header>
+        </div>
     </div>
 </header>
 {% endblock %}

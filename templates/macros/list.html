@@ -54,7 +54,7 @@ Zola or Tera changes make it possible without horrible workarounds.
 {% macro item(page, highlight) %}
 <div class="d-flex flex-wrap items-start justify-center mb-4">
     <a href="{{ page.path }}">
-        <img class="min-w-fixed rounded-circle mb-3" {{ image::resize(url = page.extra.image | default(value = false), name = page.extra.author, directory = page.colocated_path) }}>
+        <img class="min-w-fixed rounded-circle mb-3" alt="{{ page.extra.author }}" {{ image::resize(url = page.extra.image | default(value = false), name = page.extra.author, directory = page.colocated_path) }}>
     </a>
     <div class="text-left min-w-fixed mr-auto px-3">
             <a href="{{ page.path }}">
