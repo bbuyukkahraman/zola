@@ -23,7 +23,7 @@
                                     {%- set name = button_names | nth(n = loop.index0) -%}
                                     {%- set url = row | nth(n = button_data_column - 1) -%}
                                     {{ ' ' }}
-                                    <a class="btn small px-1 py-0" href="{{ url }}">{{ name }}</a>
+                                    <a class="btn small px-1 py-0" href="{{ url | safe }}">{{ name }}</a>
                                 {%- endif -%}
                             {%- endfor -%}
                         </td>

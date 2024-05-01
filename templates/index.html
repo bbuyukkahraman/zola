@@ -10,7 +10,7 @@
 
         <div class="ml-3 d-none b:d-flex flex-column">
             {% for header_page in config.extra.header_pages %}
-                <a class="p-2" href="{{ header_page.url | safe }}">{{ header_page.title }}</a>
+                <a class="p-2" href="{{ get_url(path = header_page.url) | safe }}">{{ header_page.title }}</a>
             {% endfor %}
         </div>
     </nav>
@@ -21,7 +21,7 @@
 <header class="bg-header">
     <div class="container d-flex justify-center">
         <div class="header d-flex flex-column items-center text-center px-3 py-4">
-            <h1 class="mb-2">{% if config.extra.tagline %}<span class="tagline h3">{{ config.extra.tagline }}</span> {% endif %}{{ config.extra.title }}</h1>
+            <h1 id="home" class="mb-2">{% if config.extra.tagline %}<span class="tagline h3">{{ config.extra.tagline }}</span> {% endif %}{{ config.extra.title }}</h1>
 
             {% if config.extra.subtitle %}
                 <h2 class="h3">{{ config.extra.subtitle }}</h2>
