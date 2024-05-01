@@ -1,5 +1,7 @@
 .header {
     --color-primary: var(--color-text);
+}
+.fade {
     background: color-mix(in srgb, var(--color-light) 95%, transparent);
     box-shadow: 0 0 2rem 2rem color-mix(in srgb, var(--color-light) 95%, transparent);
     border-radius: 10rem;
@@ -10,6 +12,37 @@
 .tagline::after {
     content: "\A";
     white-space: pre;
+}
+.bg-svg, .bg-png, .bg-jpg {
+    background-position: center; 
+    background-repeat: repeat;
+}
+.bg-svg {
+    background-image: url("banner.svg");
+}
+.bg-png {
+    background-image: url("banner.png");
+}
+.bg-jpg {
+    background-image: url("banner.jpg");
+}
+.bg-contain {
+    background-size: contain;
+}
+.bg-cover {
+    background-size: cover;
+}
+.bg-fit-width {
+    background-size: 100% auto;
+}
+.bg-fit-height {
+    background-size: auto 100%;
+}
+.bg-tile {
+    background-size: auto auto;
+}
+.bg-no-repeat {
+    background-repeat: no-repeat !important;
 }
 .bg-odd {
     background-color: var(--color-light) !important;
@@ -31,4 +64,7 @@
 }
 .min-w-fixed {
     min-width: var(--width-fixed) !important;
+}
+.color-text {
+    color: var(--color-text);
 }

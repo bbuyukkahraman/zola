@@ -18,20 +18,22 @@
 {% endblock %}
 
 {% block header %}
-<header class="bg-header">
+<header class="bg-odd{% if config.extra.banner %} bg-{{ config.extra.banner.extension }} bg-{{ config.extra.banner.size }}{%if config.extra.banner.no_repeat %} bg-no-repeat{% endif %}{% endif %}">
     <div class="container d-flex justify-center">
-        <div class="header d-flex flex-column items-center text-center px-3 py-4">
-            <h1 id="home" class="mb-2">{% if config.extra.tagline %}<span class="tagline h3">{{ config.extra.tagline }}</span> {% endif %}{{ config.extra.title }}</h1>
+        <div class="header d-flex flex-column items-center text-center px-3 py-4{% if config.extra.banner.fade %} fade{% endif %}">
+            <h1 id="home">{% if config.extra.tagline %}<span class="tagline h3">{{ config.extra.tagline }}</span> {% endif %}{{ config.extra.title }}</h1>
 
             {% if config.extra.subtitle %}
                 <h2 class="h3">{{ config.extra.subtitle }}</h2>
             {% endif %}
 
-            <div class="d-flex justify-center">
-                {% for button in config.extra.buttons %}
-                    <a class="btn mx-1" href="{{ button.url | safe }}">{{ button.name }}</a>
-                {% endfor %}
-            </div>
+            {% if config.extra.buttons %}
+                <div class="d-flex justify-center">
+                    {% for button in config.extra.buttons %}
+                        <a class="btn mx-1" href="{{ button.url | safe }}">{{ button.name }}</a>
+                    {% endfor %}
+                </div>
+            {% endif %}
         </div>
     </div>
 </header>

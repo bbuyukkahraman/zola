@@ -1,28 +1,15 @@
 +++
 title = "Academic Workshop Zola Theme"
-[extra]
-large_card = false
-favicon = false
-head_includes = """
-<style>
-    .bg-header {
-        background-image: url("banner.svg");
-        background-size: 5rem;
-        background-position: center; 
-        background-repeat: repeat;
-    }
-</style>
-"""
 +++
 
-{% no_center() %}
-
 # Design
+
+{% no_center() %}
 
 Welcome to the [Academic Workshop](https://github.com/aterenin/academic-workshop) Zola theme!
 This theme is designed for hosting a scientific workshop or seminar series website.
 
-# Features
+## Features
 
 * A customizable header, with support for a banner, icon, title text, subtitle, date, and link, all enabled via straightforward options in the config file.
 * Shortcodes implementing various useful features:
@@ -132,4 +119,4 @@ This theme is designed for hosting a scientific workshop or seminar series websi
 
 {{ list(section_name = "seminars") }}
 
-{{ button(text = "All Seminars", url = "seminars")}}
+{{ button(name = "All Seminars", url = "seminars")}}

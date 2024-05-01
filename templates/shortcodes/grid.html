@@ -11,7 +11,7 @@
     {% for idx in range(end = num_items) %}
         <div class="d-flex flex-column items-center mx-4 mb-4">
             {% if urls %}
-                <a class="d-contents" href="{{ urls[idx] | safe }}">
+                <a class="d-contents color-text" href="{{ urls[idx] | safe }}">
             {% endif %}
             {% set lines = text[idx] %}
             {% if lines is not iterable %}

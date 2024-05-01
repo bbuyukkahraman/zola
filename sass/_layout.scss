@@ -7,19 +7,23 @@ body {
     color: var(--color-text);
 }
 
+p {
+    text-align: initial;
+}
+
 a {
     text-decoration: none;
     color: var(--color-primary);
 }
 
 a:hover {
-    color: color-mix(in srgb, var(--color-primary), var(--color-black) 15%);
+    @if $color-link-hover == lighten { color: color-mix(in srgb, var(--color-primary), var(--color-white) 15%); } 
+    @if $color-link-hover == darken { color: color-mix(in srgb, var(--color-primary), var(--color-black) 15%); }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3 {
     font-weight: 300;
 }
-
 h1 {
     font-size: $h1-font-size;
 }
@@ -39,6 +43,9 @@ h6 {
     font-size: $h6-font-size;
 }
 
+h1.h4, h1.h5, h1.h6, h2.h4, h2.h5, h2.h6, h3.h4, h3.h5, h3.h6 {
+    font-weight: unset;
+}
 .h1 {
     font-size: $h1-font-size !important;
 }
@@ -120,5 +127,7 @@ small {
 .footer {
     margin-top: 1rem;
     opacity: 50%;
+}
+.footer p {
     text-align: center;
 }
