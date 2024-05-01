@@ -1,0 +1,58 @@
+{% import "macros/list.html" as list %}
+
+{% extends "default.html" %}
+
+{% block nav %}
+<header class="n:container r:d-none">
+    <nav class="n:menu text-right">
+        <input id="nav" type="checkbox" class="btn-check">
+        <label for="nav" aria-label="button" class="n:icon d-inline-block m-1"></label>
+
+        <div class="ml-3 d-none b:d-flex flex-column">
+            {% for header_page in config.extra.header_pages %}
+                <a class="p-2" href="{{ header_page.url | safe }}">{{ header_page.title }}</a>
+            {% endfor %}
+        </div>
+    </nav>
+</header>
+{% endblock %}
+
+{% block header %}
+<header class="bg-header">
+    <div class="container d-flex justify-center">
+        <header class="header d-flex flex-column items-center text-center px-3 py-4">
+            <h1>{% if config.extra.tagline %}<span class="tagline h3">{{ config.extra.tagline }}</span> {% endif %}{{ config.extra.title }}</h1>
+
+            {% if config.extra.subtitle %}
+                <h2>{{ config.extra.subtitle }}</h2>
+            {% endif %}
+
+            <div class="d-flex justify-center">
+                {% for button in config.extra.buttons %}
+                    <a class="btn mx-1" href="{{ button.url | safe }}">{{ button.name }}</a>
+                {% endfor %}
+            </div>
+        </header>
+    </div>
+</header>
+{% endblock %}
+
+{% block main %}
+<main aria-label="Content">
+    {% block content %}
+        <div class="bg-even">
+            <section class="container text-center py-5">
+                {{ list::insert_list(content = this.content) | safe }}
+            </section>
+        </div>
+    {% endblock %}
+</main>
+{% endblock main %}
+
+{% block footer %}
+    {% if config.extra.footer_text %}
+        <footer class="footer">
+            {{ config.extra.footer_text | markdown | safe }}
+        </footer>
+    {% endif %}
+{% endblock %}

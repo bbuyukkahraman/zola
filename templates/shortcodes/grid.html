@@ -1,0 +1,33 @@
+{% import "macros/image.html" as image %}
+
+{% if max_cols %}
+    {% set max_width = max_cols + 1 %}
+    {% set mw = ' mw-fixed-' ~ max_width %}
+{% else %}
+    {% set mw = '' %}
+{% endif %}
+<div class="d-flex flex-wrap justify-center mx-auto mt-5 mb-n4{{ mw }}">
+    {% set num_items = text | length %}
+    {% for idx in range(end = num_items) %}
+        <div class="d-flex flex-column items-center mx-4 mb-4">
+            {% if urls %}
+                <a class="d-contents" href="{{ urls[idx] }}">
+            {% endif %}
+            {% set lines = text[idx] %}
+            {% if lines is not iterable %}
+                {% set lines = [text[idx]] %}
+            {% endif %}
+            <img class="rounded-circle mb-3" {{ image::resize(url = images[idx] | default(value = false), name = lines[0], directory = image_dir | default(value = false)) }}>
+            {% for line in lines %}
+                {% if loop.first %}
+                    <h2 class="h4 my-1">{{ line }}</h2>
+                {% else %}
+                    <h3 class="h6 my-1">{{ line }}</h3>
+                {% endif %}
+            {% endfor %}
+            {% if urls %}
+                </a>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>

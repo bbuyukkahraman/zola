@@ -1,0 +1,31 @@
+.header {
+    --color-primary: var(--color-text);
+    background: color-mix(in srgb, var(--color-light) 95%, transparent);
+    box-shadow: 0 0 2rem 2rem color-mix(in srgb, var(--color-light) 95%, transparent);
+    border-radius: 10rem;
+}
+.tagline::after {
+    content: "\A";
+    white-space: pre;
+}
+.bg-odd {
+    background-color: var(--color-light) !important;
+}
+.bg-even {
+    background-color: var(--color-white) !important;
+}
+.mw-fixed-2 {
+    max-width: calc(var(--width-fixed) * 2) !important;
+}
+.mw-fixed-3 {
+    max-width: calc(var(--width-fixed) * 3) !important;
+}
+.mw-fixed-4 {
+    max-width: calc(var(--width-fixed) * 4) !important;
+}
+.mw-fixed-5 {
+    max-width: calc(var(--width-fixed) * 5) !important;
+}
+.min-w-fixed {
+    min-width: var(--width-fixed) !important;
+}
