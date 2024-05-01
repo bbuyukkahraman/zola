@@ -3,6 +3,16 @@ title = "Academic Workshop Zola Theme"
 [extra]
 large_card = false
 favicon = false
+head_includes = """
+<style>
+    .bg-header {
+        background-image: url("banner.svg");
+        background-size: 5rem;
+        background-position: center; 
+        background-repeat: repeat;
+    }
+</style>
+"""
 +++
 
 {% no_center() %}
