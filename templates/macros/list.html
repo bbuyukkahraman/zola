@@ -52,11 +52,11 @@ Zola or Tera changes make it possible without horrible workarounds.
 {% endmacro %}
 
 {% macro item(page, highlight) %}
-<div class="d-flex flex-wrap items-start justify-center mb-4">
-    <a href="{{ get_url(path = page.path) | safe }}">
-        <img class="min-w-fixed rounded-circle mb-3" alt="{{ page.extra.author }}" {{ image::resize(url = page.extra.image | default(value = false), name = page.extra.author, directory = page.colocated_path) }}>
+<div class="d-flex flex-column r:flex-row items-center r:items-start mb-4">
+    <a class="d-contents" href="{{ get_url(path = page.path) | safe }}">
+        <img class="rounded-circle mb-3" alt="{{ page.extra.author }}" {{ image::resize(url = page.extra.image | default(value = false), name = page.extra.author, directory = page.colocated_path) }}>
     </a>
-    <div class="text-left min-w-fixed mr-auto px-3">
+    <div class="text-left mr-auto px-3">
             <a href="{{ get_url(path = page.path) | safe }}">
                 <h2 class="mb-1">{{ page.title }}</h2>
             </a>

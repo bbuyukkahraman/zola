@@ -24,6 +24,9 @@ a:hover {
 h1, h2, h3 {
     font-weight: 300;
 }
+h4, h5, h6 {
+    font-weight: 400;
+}
 h1 {
     font-size: $h1-font-size;
 }
@@ -44,7 +47,7 @@ h6 {
 }
 
 h1.h4, h1.h5, h1.h6, h2.h4, h2.h5, h2.h6, h3.h4, h3.h5, h3.h6 {
-    font-weight: unset;
+    font-weight: 400;
 }
 .h1 {
     font-size: $h1-font-size !important;

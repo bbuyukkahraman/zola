@@ -10,7 +10,7 @@
 
         <div class="ml-3 d-none b:d-flex flex-column">
             {% for header_page in config.extra.header_pages %}
-                <a class="p-2" href="{{ get_url(path = header_page.url) | safe }}">{{ header_page.title }}</a>
+                <a class="p-2" href="{{ get_url(path = header_page.url) | safe }}">{{ header_page.name }}</a>
             {% endfor %}
         </div>
     </nav>

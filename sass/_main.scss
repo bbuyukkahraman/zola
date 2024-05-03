@@ -50,21 +50,9 @@
 .bg-even {
     background-color: var(--color-white) !important;
 }
-.mw-fixed-2 {
-    max-width: calc(var(--width-fixed) * 2) !important;
-}
-.mw-fixed-3 {
-    max-width: calc(var(--width-fixed) * 3) !important;
-}
-.mw-fixed-4 {
-    max-width: calc(var(--width-fixed) * 4) !important;
-}
-.mw-fixed-5 {
-    max-width: calc(var(--width-fixed) * 5) !important;
-}
-.min-w-fixed {
-    min-width: var(--width-fixed) !important;
-}
 .color-text {
     color: var(--color-text);
+}
+.narrow {
+    max-width: round(3 * $container-width / 4) !important;
 }

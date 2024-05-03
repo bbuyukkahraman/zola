@@ -18,4 +18,4 @@ banner = {extension = "svg", size = "fixed", fade = true}
 buttons = [{name = "Website", url = "https://aterenin.github.io/academic-workshop"}, {name="GitHub", url="http://github.com/aterenin/academic-workshop"}]
 image = {resize = 400, ext = '.jpg'}
 list_page_limit = 10
-header_pages = [{title = "Home", url = "/#home"},{title = "Design", url = "/#design"}]
+header_pages = [{name = "Home", url = "/#home"},{name = "Design", url = "/#design"}]

@@ -54,7 +54,7 @@ This theme is designed for hosting a scientific workshop or seminar series websi
         "placeholder.svg",
         "placeholder.svg",
     ],
-    max_cols = 3) }}
+    narrow = true) }}
 
 
 

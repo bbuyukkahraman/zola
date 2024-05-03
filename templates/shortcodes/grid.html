@@ -1,14 +1,9 @@
 {% import "macros/image.html" as image %}
 
-{% if max_cols %}
-    {% set max_width = max_cols + 1 %}
-    {% set mw = ' mw-fixed-' ~ max_width %}
-{% else %}
-    {% set mw = '' %}
-{% endif %}
-<div class="d-flex flex-wrap justify-center mx-auto mt-5 mb-n4{{ mw }}">
-    {% set num_items = text | length %}
+{% set num_items = text | length %}
+<div class="d-flex flex-wrap justify-center mx-auto mt-5 mb-n4{% if narrow %} narrow{% endif %}">
     {% for idx in range(end = num_items) %}
+        {% if idx is even and not narrow %}<div class="d-flex flex-wrap justify-center">{% endif %}
         <div class="d-flex flex-column items-center mx-4 mb-4">
             {% if urls %}
                 <a class="d-contents color-text" href="{{ urls[idx] | safe }}">
@@ -17,7 +12,7 @@
             {% if lines is not iterable %}
                 {% set lines = [text[idx]] %}
             {% endif %}
-            <img class="rounded-circle mb-3" alt="lines[0]" {{ image::resize(url = images[idx] | default(value = false), name = lines[0], directory = image_dir | default(value = false)) }}>
+            <img class="rounded-circle w-auto mb-3" alt="lines[0]" {{ image::resize(url = images[idx] | default(value = false), name = lines[0], directory = image_dir | default(value = false)) }}>
             {% for line in lines %}
                 {% if loop.first %}
                     <h2 class="h4 my-1">{{ line }}</h2>
@@ -29,5 +24,6 @@
                 </a>
             {% endif %}
         </div>
+        {% if idx is odd and not narrow %}</div>{% endif %}
     {% endfor %}
 </div>

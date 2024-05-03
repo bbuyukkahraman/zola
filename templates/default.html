@@ -11,14 +11,6 @@
 
         <link rel="stylesheet" href="{{ get_url(path = 'main.css') | safe }}">
 
-        {% block style %}
-        <style>
-            :root {
-                --width-fixed: {{ config.extra.image.resize / 2 | default(value = 200) }}px;
-            }
-        </style>
-        {% endblock %}
-
         {% set icon = get_image_metadata(path = 'apple-touch-icon.png', allow_missing = true) %}
         {% if icon %}
         <link rel="shortcut icon" type="image/x-icon" href="{{ get_url(path = 'favicon.ico') }}">
