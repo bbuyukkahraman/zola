@@ -20,11 +20,13 @@
 {% block header %}
 <header class="bg-odd{% if config.extra.banner %} bg-{{ config.extra.banner.extension }} bg-{{ config.extra.banner.size }}{%if config.extra.banner.no_repeat %} bg-no-repeat{% endif %}{% endif %}">
     <div class="container d-flex justify-center">
-        <div class="header d-flex flex-column items-center text-center px-3 py-4{% if config.extra.banner.fade %} fade{% endif %}">
-            <h1 id="home">{% if config.extra.tagline %}<span class="tagline h3">{{ config.extra.tagline }}</span> {% endif %}{{ config.extra.title }}</h1>
+        <div class="header text-center px-3 py-4{% if config.extra.banner.fade %} fade{% endif %}">
+            {% if config.extra.title.url %}<a href="{% if config.extra.title.url is string %}{{ config.extra.title.url }}{% else %}{{ get_url(path = '/') }}{% endif %}">{% endif %}
+            <h1 id="home">{% if config.extra.title.tagline %}<span class="tagline h3">{{ config.extra.title.tagline }}</span> {% endif %}{{ config.extra.title.title }}</h1>
+            {% if config.extra.title.url %}</a>{% endif %}
 
-            {% if config.extra.subtitle %}
-                <h2 class="h3">{{ config.extra.subtitle }}</h2>
+            {% if config.extra.title.subtitle %}
+                <h2 class="h3">{{ config.extra.title.subtitle }}</h2>
             {% endif %}
 
             {% if config.extra.buttons %}
@@ -43,7 +45,7 @@
 <main aria-label="Content">
     {% block content %}
         <div class="bg-even">
-            <section class="container text-center py-5">
+            <section class="container content py-5">
                 {{ list::insert_list(content = this.content) | safe }}
             </section>
         </div>

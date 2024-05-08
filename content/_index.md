@@ -4,8 +4,6 @@ title = "Academic Workshop Zola Theme"
 
 # Design
 
-{% no_center() %}
-
 Welcome to the [Academic Workshop](https://github.com/aterenin/academic-workshop) Zola theme!
 This theme is designed for hosting a scientific workshop or seminar series website.
 
@@ -21,8 +19,6 @@ This theme is designed for hosting a scientific workshop or seminar series websi
 * Easily-customizable colors by overriding `main.scss`, including dark mode via CSS variables.
 * Simple, straightforward, easy-to-use, and easy-to-extend programmatic interface.
 * No JavaScript or CSS dependencies of any kind, built in a way that is [designed to last](https://jeffhuang.com/designed_to_last/), even as web and browser standards change.
-
-{% end %}
 
 
 

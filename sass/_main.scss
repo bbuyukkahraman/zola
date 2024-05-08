@@ -53,6 +53,6 @@
 .color-text {
     color: var(--color-text);
 }
-.narrow {
-    max-width: round(3 * $container-width / 4) !important;
+.content > h1 {
+    text-align: center;
 }

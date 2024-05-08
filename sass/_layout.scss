@@ -21,12 +21,6 @@ a:hover {
     @if $color-link-hover == darken { color: color-mix(in srgb, var(--color-primary), var(--color-black) 15%); }
 }
 
-h1, h2, h3 {
-    font-weight: 300;
-}
-h4, h5, h6 {
-    font-weight: 400;
-}
 h1 {
     font-size: $h1-font-size;
 }
@@ -45,10 +39,13 @@ h5 {
 h6 {
     font-size: $h6-font-size;
 }
-
-h1.h4, h1.h5, h1.h6, h2.h4, h2.h5, h2.h6, h3.h4, h3.h5, h3.h6 {
+h1, h2, h3, h4 {
+    font-weight: 300;
+}
+h4, h5 {
     font-weight: 400;
 }
+
 .h1 {
     font-size: $h1-font-size !important;
 }
@@ -67,6 +64,17 @@ h1.h4, h1.h5, h1.h6, h2.h4, h2.h5, h2.h6, h3.h4, h3.h5, h3.h6 {
 .h6 {
     font-size: $h6-font-size !important;
 }
+.h1, .h2, .h3, .h4 {
+    font-weight: 300 !important;
+}
+.h4, .h5 {
+    font-weight: 400 !important;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    line-height: 1.1 !important;
+}
+
 small {
     font-size: 80%;
     font-weight: 400;

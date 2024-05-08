@@ -43,7 +43,8 @@ Zola or Tera changes make it possible without horrible workarounds.
     {% if highlight %}
         {% set filtered_pages = pages | filter(attribute = 'extra.highlight', value = true) %}
     {% else %}
-        {% set filtered_pages = pages | slice(end = config.extra.list_page_limit) %}
+        {% set page_limit = section.extra.list_page_limit | default(value = config.extra.list_page_limit) %}
+        {% set filtered_pages = pages | slice(end = page_limit) %}
     {% endif %}
     {% for page in filtered_pages %}
         {{ list::item(page = page, highlight = highlight )}}
@@ -56,17 +57,17 @@ Zola or Tera changes make it possible without horrible workarounds.
     <a class="d-contents" href="{{ get_url(path = page.path) | safe }}">
         <img class="rounded-circle mb-3" alt="{{ page.extra.author }}" {{ image::resize(url = page.extra.image | default(value = false), name = page.extra.author, directory = page.colocated_path) }}>
     </a>
-    <div class="text-left mr-auto px-3">
-            <a href="{{ get_url(path = page.path) | safe }}">
-                <h2 class="mb-1">{{ page.title }}</h2>
-            </a>
-            <a href="{{ page.extra.author_url | safe }}">
-                <h3 class="h5 mb-2">{{ page.extra.author }} &middot; {{ page.extra.institution }}</h3>
-            </a>
-            {% if highlight %} 
-                {% set time = page.extra.time | default(value = false) %}
-            {% endif %}
-            <h4 class="h6 mb-3">{{ page.date | date(format='%Y-%m-%d') }}{% if time %} &middot; {{ time }}{% endif %}</h4>
+    <div class="mr-auto px-3">
+        <a href="{{ get_url(path = page.path) | safe }}">
+            <h2 class="mb-1">{{ page.title }}</h2>
+        </a>
+        <a href="{{ page.extra.author_url | safe }}">
+            <h3 class="h5 mb-2">{{ page.extra.author }} &middot; {{ page.extra.institution }}</h3>
+        </a>
+        {% if highlight %} 
+            {% set time = page.extra.time | default(value = false) %}
+        {% endif %}
+        <h4 class="h6 mb-3">{{ page.date | date(format='%Y-%m-%d') }}{% if time %} &middot; {{ time }}{% endif %}</h4>
         
         {% if not highlight %}
             {% set abstract_button = load_data(literal = 'buttons = [{name = "Abstract", url = "' ~ get_url(path = page.path) ~ '"}]', format = 'toml') %}
