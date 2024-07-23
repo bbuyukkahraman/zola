@@ -1,5 +1,5 @@
 {% macro seo(page) %}
-{% set url = get_url(path = page.path) %}
+{% set url = get_url(path = page.path, trailing_slash = true) %}
 <meta property="og:title" content="{{ page.title | default(value = config.extra.title) }}">
 {% if page.author %}
     <meta name="author" content="{{ page.author }}">
