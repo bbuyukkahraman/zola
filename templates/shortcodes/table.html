@@ -3,7 +3,7 @@
     <thead>
         <tr>
             {% for column in input.headers %}
-                {% if not button_data_columns is containing(loop.index) %}
+                {% if columns is containing(input.headers[loop.index0]) %}
                     <th>{{ column }}</th>
                 {% endif %}
             {% endfor %}
@@ -13,7 +13,7 @@
         {% for row in input.records %}
             <tr>
                 {% for column in row %}
-                    {% if not button_data_columns is containing(loop.index) %}
+                    {% if columns is containing(input.headers[loop.index0]) %}
                         <td>
                             {{- column -}}
                             {%- set column_idx = loop.index -%}

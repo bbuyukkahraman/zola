@@ -91,6 +91,7 @@ This theme is designed for hosting a scientific workshop or seminar series websi
 
 {{ table(
     data = "papers.csv", 
+    columns = ["Title","Authors"],
     button_names = ["paper","poster"], 
     button_data_columns = [3,4], 
     button_output_columns = [1,1]) }}
