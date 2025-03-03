@@ -71,9 +71,9 @@ Zola or Tera changes make it possible without horrible workarounds.
         
         {% if not highlight %}
             {% set abstract_button = load_data(literal = 'buttons = [{name = "Abstract", url = "' ~ get_url(path = page.path) ~ '"}]', format = 'toml') %}
-            {% set buttons = abstract_button.buttons | concat(with = page.extra.buttons) %}
+            {% set buttons = abstract_button.buttons | concat(with = page.extra.buttons | default(value = [])) %}
         {% else %}
-            {% set buttons = page.extra.buttons %}
+            {% set buttons = page.extra.buttons | default(value = []) %}
         {% endif %}
         {% for button in buttons %}
             <a class="btn mb-3 mr-2" href="{{ button.url | safe }}">{{ button.name }}</a>
