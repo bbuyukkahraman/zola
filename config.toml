@@ -17,3 +17,4 @@ buttons = [{name = "Website", url = "https://aterenin.github.io/academic-worksho
 image = {resize = 400, ext = '.jpg'}
 list_page_limit = 10
 header_pages = [{name = "Home", url = "/#home"},{name = "Design", url = "/#design"}]
+button_shortcuts = [{variable = "video", name = "Video"}]

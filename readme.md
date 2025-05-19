@@ -43,6 +43,7 @@ buttons = [{name = "Example", url = "https://example.com/"}, {name="GitHub", url
 image = {resize = 400, ext = '.jpg'} # this sets the desired size for image resizing, as well as the default extension
 list_page_limit = 10 # this sets the default number of items which show up in one page in a list
 header_pages = [{name = "Home", url = "/#home"},{name = "Design", url = "/#design"}] # this sets the pages which show up in the navigation menu which gets displayed on mobile devices
+button_shortcuts = [{variable = "video", name = "Video"}] # this configuration makes it possible to add a button to a page or section in a less-verbose way, for example by writing video = "/url/to/video" instead of buttons = [{name = "Video", url = "/url/to/video"}]
 ```
 
 ## Page configuration 

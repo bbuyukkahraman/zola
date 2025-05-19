@@ -75,6 +75,12 @@ Zola or Tera changes make it possible without horrible workarounds.
         {% else %}
             {% set buttons = page.extra.buttons | default(value = []) %}
         {% endif %}
+        {% for button_shortcut in config.extra.button_shortcuts | default(value = []) %}
+            {% if page.extra[button_shortcut.variable] %}
+                {% set shortcut_button = load_data(literal = 'buttons = [{name = "' ~ button_shortcut.name ~ '", url = "' ~ page.extra[button_shortcut.variable] ~ '"}]', format = 'toml') %}
+                {% set_global buttons = buttons | concat(with = shortcut_button.buttons) %}
+            {% endif %}
+        {% endfor %}
         {% for button in buttons %}
             <a class="btn mb-3 mr-2" href="{{ button.url | safe }}">{{ button.name }}</a>
         {% endfor %}
