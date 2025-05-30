@@ -32,9 +32,9 @@
             {% endif %}
 
             {% if config.extra.buttons %}
-                <div class="d-flex justify-center">
+                <div class="d-flex flex-wrap justify-center">
                     {% for button in config.extra.buttons %}
-                        <a class="btn mx-1" href="{{ button.url | safe }}">{{ button.name }}</a>
+                        <a class="btn m-1" href="{{ button.url | safe }}">{{ button.name }}</a>
                     {% endfor %}
                 </div>
             {% endif %}
