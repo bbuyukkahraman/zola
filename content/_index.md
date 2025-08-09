@@ -1,8 +1,8 @@
 +++
-title = "Academic Workshop Zola Theme"
+title = "Academic Workshop Theme"
 +++
 
-# Design
+# Tasarım
 
 Welcome to the [Academic Workshop](https://github.com/aterenin/academic-workshop) Zola theme!
 This theme is designed for hosting a scientific workshop or seminar series website.
